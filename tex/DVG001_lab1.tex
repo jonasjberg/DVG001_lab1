@@ -1,0 +1,82 @@
+% ==============================================================================
+% DVG001
+% Introduktion till Linux och små nätverk
+% ---------------------------------------
+% Author:
+% Jonas Sjöberg     <tel12jsg@student.hig.se>
+%
+% License:
+% Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+% See LICENSE.md for full licensing information.
+% ==============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\inputencoding{utf8}
+\usepackage[swedish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fullpage}
+
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{graphicx}
+
+\usepackage{minted}
+\usemintedstyle{pastie} 
+\renewcommand\listingscaption{Program source code}
+\renewcommand\listoflistingscaption{List of program sources}
+
+\usepackage{verbatim}
+\usepackage{listings}
+
+\usepackage[backend=biber,
+            style=numeric]{biblatex}
+\addbibresource{tex/referenser.bib}
+%\bibliography{tex/referenser}
+
+
+\title{DVG001                                  \\ 
+       Introduktion till Linux och små nätverk \\ 
+       Laboration 1}
+
+\author{                                 \\
+  Jonas Sjöberg                          \\
+  860224                                 \\
+  Högskolan i Gävle                      \\
+  \texttt{tel12jsg@student.hig.se}       \\
+  \texttt{https://github.com/jonasjberg} \\
+}
+
+\date{}
+
+\begin{document}
+  \maketitle
+
+  \begin{center}
+  \begin{tabular}{l r}
+    Datum:               & Januari 2016   \\
+    Kursansvarig lärare: & Anders Jackson
+  \end{tabular}
+  \end{center}
+
+  \begin{abstract}
+    Laboration i DVG001 - Introduktion till Linux och små nätverk som läses på distans via Högskolan i Gävle under vårterminen 2016.
+  \end{abstract}
+
+  \newpage
+  %\hypersetup{linkcolor=black}
+  \setcounter{tocdepth}{3}
+  \tableofcontents
+  \newpage
+
+  \input{tex/intro.tex}
+  \input{tex/uppg01.tex}
+% \input{tex/resultat.tex}
+
+  %\newpage
+  %\input{tex/referenser.tex}
+  \printbibliography
+
+\end{document}

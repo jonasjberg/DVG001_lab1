@@ -44,12 +44,12 @@
 %%\bibliography{tex/referenser}
 
 \newcommand{\screenshot}[3]{
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 %\includegraphics[width=\linewidth]{#1}
 \includegraphics[height=8.0cm]{#1}
-\caption{#2}
-\label{#3}
+\caption[#2]{#3}
+\label{#4}
 \end{figure}
 }
 
@@ -86,7 +86,9 @@
   %\hypersetup{linkcolor=black}
   \setcounter{tocdepth}{3}
   \tableofcontents
+
   \newpage
+  \listoffigures
 
   \input{tex/intro.tex}
   \input{tex/uppg01.tex}

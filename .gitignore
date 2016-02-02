@@ -125,3 +125,5 @@ _minted*
 
 # symlinked file
 Person.java
+
+*.pdf

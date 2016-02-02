@@ -1,15 +1,27 @@
-\section{Planering och genomförande}
+% ==============================================================================
+% DVG001
+% Introduktion till Linux och små nätverk
+% ---------------------------------------
+% Author:
+% Jonas Sjöberg     <tel12jsg@student.hig.se>
+%
+% License:
+% Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+% See LICENSE.md for full licensing information.
+% ==============================================================================
+
+\section{Planering}
 % TODO: Kort och orienterande om hur ni tänkte genomföra uppgiften.
 %       Orienterande om Planering och Genomförande.
 
-% ______________________________________________________________________________
-\subsection{Planering}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\subsection{Arbetsmetod}
 % Hur kommer ni att arbeta?  Detta är en lite längre text än den rent
-% orienterande texten i Planering och genomförande ovan.  För att infoga
-% hänvisningar till andra delar av dokumentet hittar ni under menyn
-% ”Infoga/Korshänvisning...”.  Där kan ni skapa referenser som ni kan använda
-% och ni kan lägga in sidnummer, kapitelnummer eller kapiteltext till en rubrik
-% eller referens.
+% orienterande texten i Planering och genomförande ovan.
+
+Nedan följer en preliminär redogörelse för den experimentuppställning som används
+under laborationen:
 
 \begin{itemize}
   \item Laborationen utförs på en \texttt{ProBook-6545b} laptop som kör
@@ -20,13 +32,27 @@
 
   \item För revisionskontroll används \texttt{Git}.
 
-  \item Virtualisering sker med \texttt{VirtualBox} version
+  \item Virtualisering sker med \texttt{Oracle VirtualBox} version
         \texttt{5.0.10\_Ubuntu r104061}.
 
 \end{itemize}
 
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Genomförande}
+% Här skriver ni vilka steg ni gjorde och resultatet av dem. Ni skall ha med
+% information så att vi kan se hur ni har gjort, dvs beskrivande text,
+% skärmdumpar, bilder etc.  Längre skärmdumpar, innehåll i relevanta filer och
+% större bilder lägger ni i bilagor, som bilaga I, så att de inte tar över en
+% sida själva.
+% Kommandon som ni skriver i ett skal skall skrivas i detta format, som är
+% teckenformatmall ”Exempel” i OpenOffice/LibreOffice. Detta så att de
+% skiljer sig från övriga brödtext i stycket.  Detta underlättar läsningen för
+% andra, som oss lärare.
+
+
 % ______________________________________________________________________________
-\subsection{Genomförande}
+\subsection{Skapande av en virtuell maskin}
 Det första steget var att ladda hem en bootbar \texttt{.iso}-fil av
 distributionen Debian. Det finns många olika varianter att välja bland och då
 jag sedan tidigare är van vid att använda \texttt{xfce} så valde jag att ladda
@@ -37,88 +63,344 @@ tillfälle, så att välja precis ``rätt'' paktererad version av en distributio
 är inte nödvändigt.  Men en färdigpaketerad version brukar kunna förenkla
 installationsprocessen.
 
-\begin{figure}[htbp]
-  \centering
-    \includegraphics[width=\linewidth]{img/A_new-01}
-    \caption{Skärmdump av värdsystemet som kör \texttt{VirtualBox} där en ny
-             virtuell maskin skapas genom att klicka den blå ikonen \texttt{New}.}
-  \label{fig:A_new-01}
-\end{figure}
+\screenshot{img/A_new-01}
+           {Skärmdump av värdsystemet som kör \texttt{VirtualBox} där en ny
+            virtuell maskin skapas genom att klicka den blå ikonen
+            \texttt{New}.}
+           {fig:A_new-01}
 
 Jag väljer att skapa min miljö som en virtuell maskin. Då jag redan använder
 och är bekant med \texttt{VirtualBox} så väljer jag att använda det för att
 skapa min virtuella maskin enligt Figur~\ref{fig:A_new-01}.
 
-% Här skriver ni vilka steg ni gjorde och resultatet av dem. Ni skall ha med
-% information så att vi kan se hur ni har gjort, dvs beskrivande text,
-% skärmdumpar, bilder etc.  Längre skärmdumpar, innehåll i relevanta filer och
-% större bilder lägger ni i bilagor, som bilaga I, så att de inte tar över en
-% sida själva.
-% Kommandon som ni skriver i ett skal skall skrivas i detta format, som är
-% teckenformatmall ”Exempel” i OpenOffice/LibreOffice. Detta så att de
-% skiljer sig från övriga brödtext i stycket.  Detta underlättar läsningen för
-% andra, som oss lärare.
-% Bilder lägger ni in med "Infoga/Bildobjekt/Från fil..." och sedan lägger ni
-% till text och numrering genom att markera bilden och sedan göra
-% "Infoga/Bildtext...".  Notera att man har det finns olika bildtext för dem
-% som vill prova. I den här har jag valt illustration samt skrivit in en liten
-% förklarande text.  Till bilden kan man sedan infoga en referens där man anger
-% Illustration och sedan väljer önskad bild.
+\screenshot{img/A_new-02}
+           {I dialogrutan för en ny virtuell maskin väljs namnet
+            \texttt{debian}. Autodetektering baserat på det inmatade
+            namnet markerar automatiskt \texttt{Type} samt \texttt{Version}
+            som i det här fallet stämmer och är lämpliga inställningar.}
+           {}
 
+\screenshot{img/A_new-03}
+           {Storleken på RAM-minnet sätts till en lämplig kompromiss mellan
+            vad värdsystemet kan tänkas behöva och vad gästsystemet kräver.}
+           {}
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.7\linewidth]{img/A_new-02}
-  \caption{I dialogrutan för en ny virtuell maskin väljs namnet
-           \texttt{debian}. Autodetektering baserat på det inmatade
-           namnet markerar automatiskt \texttt{Type} samt \texttt{Version}
-           som i det här fallet stämmer och är lämpliga inställningar.}
-  \label{fig:A_new-02}
-\end{figure}
+\screenshot{img/A_new-04}
+           {I dialogrutan för hårddisk väljer vi att skapa en ny virtuell
+            hårddisk.}
+           {}
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\linewidth]{img/A_new-03}
-  \caption{Storleken på RAM-minnet sätts till en lämplig kompromiss mellan
-           vad värdsystemet kan tänkas behöva och vad gästsystemet kräver.}
-  \label{}
-\end{figure}
+\screenshot{img/A_new-05}
+           {Standardvalet \texttt{VDI} fungerar bra för det här
+            användningsområdet. Ytterigare information de olika alternativen
+            finns i \cite{virtualbox:vdidetails}.}
+            % TODO: FIXA OVANSTÅENDE!
+           {}
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\linewidth]{img/A_new-04}
-  \caption{I dialogrutan för hårddisk väljer vi att skapa en ny virtuell
-           hårddisk.}
-  \label{}
-\end{figure}
+\screenshot{img/A_new-06}
+           {Lagringsutrymmets storlek väljs att växa dynamiskt efter behov.}
+           {}
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\linewidth]{img/A_new-05}
-  \caption{Standardvalet \texttt{VDI} fungerar bra för det här
-           användningsområdet. Ytterigare information de olika alternativen
-           finns i \cite{virtualbox:vdidetails}.}
-           % TODO: FIXA OVANSTÅENDE!
-  \label{}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\linewidth]{img/A_new-06}
-  \caption{Lagringsutrymmets storlek väljs att växa dynamiskt efter behov.}
-  \label{}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\linewidth]{img/A_new-07}
-  \caption{Namnet och storleken på disken sätts till \texttt{debian} (vilket
-           ger ett filnamn \texttt{debian.vdi} i katalogen för den virtuella
-           maskinen) och storleken sätts godtyckligt till \SI{10}{\mebi\byte}.}
-  \label{}
-\end{figure}
+\screenshot{img/A_new-07}
+           {Namnet och storleken på disken sätts till \texttt{debian} (vilket
+            ger ett filnamn \texttt{debian.vdi} i katalogen för den virtuella
+            maskinen) och storleken sätts godtyckligt till \SI{10}{\mega\byte}.}
+           {}
 
 \screenshot{img/A_new-08}
            {Ytterligare inställningsmöjligheter kan göras genom att högerklicka
-            på den virtuella maskinen vi skapat och välja \texttt{Settings}.}
-           {labell}
+            på den virtuella maskinen vi skapat och välja \texttt{Settings}.
+            Under fliken \texttt{Basic} så ser vi att \texttt{Name}, \texttt{Type}
+            och \texttt{Version} är valda sedan tidigare.}
+           {}
+
+\screenshot{img/A_new-09}
+           {Under fliken \texttt{Advanced} aktiveras stöd för delad clipboard,
+            vilket gör det möjligt att kopiera och klistra in text mellan
+            värdsystemet och den virtuella maskinen.}
+           {}
+
+\screenshot{img/A_new-10}
+           {Bland alternativen till höger väljs \texttt{Display}.
+            Grafikminnet för gästen ökas till värdsystemets högsta möjliga
+            \SI{128}{\mega\byte}. Stöd för hårdvaruacceleration finns ej med
+            den här kombinationen av grafikkort och version av \texttt{Xorg}.}
+           {}
+
+\screenshot{img/A_new-11}
+           {Under alternativet \texttt{Storage} finns inställningar för den
+            virtuella maskinens lagringsenheter. Under \texttt{Controller: IDE}
+            finns en emulerad optisk enhet tillgänglig.
+            Och under \texttt{Controller: SATA} syns den virtuella hårddisken
+            \texttt{debian.vdi}.}
+           {}
+
+\screenshot{img/A_new-12}
+           {Diskavbildningsfilen \texttt{debian-live-8.2.0-i386-xfce-desktop} monteras
+            genom att klicka på den lilla ikonen av en CD-skiva till höger om
+            \texttt{Optical Drive: IDE Secondary Master}. Om kryssrutan
+            \texttt{Live CD/DVD} markeras så matas det virtuella mediet ut vid omstart
+            efter att installationen är slutförd. Utmatning av media sköts manuellt.}
+           {}
+
+\screenshot{img/A_new-13}
+           {}
+           {}
+
+\screenshot{img/A_new-14}
+           {}
+           {}
+
+% ______________________________________________________________________________
+\subsection{Installation av operativsystemet}
+Den nya virtuella maskinen har nu konfigurerats för att fungera
+tillfredsställande på värdsystemet och är redo för installation av
+operativsystemet.
+
+\screenshot{img/B_install-01}
+           {}
+           {}
+
+\screenshot{img/B_install-02}
+           {}
+           {}
+
+\screenshot{img/B_install-03}
+           {}
+           {}
+
+\screenshot{img/B_install-04}
+           {}
+           {}
+
+\screenshot{img/B_install-05}
+           {}
+           {}
+
+\screenshot{img/B_install-06}
+           {}
+           {}
+
+\screenshot{img/B_install-07}
+           {}
+           {}
+
+\screenshot{img/B_install-08}
+           {}
+           {}
+
+\screenshot{img/B_install-09}
+           {}
+           {}
+
+\screenshot{img/B_install-10}
+           {}
+           {}
+
+\screenshot{img/B_install-11}
+           {}
+           {}
+
+\screenshot{img/B_install-12}
+           {}
+           {}
+
+\screenshot{img/B_install-13}
+           {}
+           {}
+
+\screenshot{img/B_install-13}
+           {}
+           {}
+
+\screenshot{img/B_install-14}
+           {}
+           {}
+
+\screenshot{img/B_install-15}
+           {}
+           {}
+
+\screenshot{img/B_install-16}
+           {}
+           {}
+
+\screenshot{img/B_install-17}
+           {}
+           {}
+
+\screenshot{img/B_install-18}
+           {}
+           {}
+
+\screenshot{img/B_install-19}
+           {}
+           {}
+
+\screenshot{img/B_install-20}
+           {}
+           {}
+
+\screenshot{img/B_install-21}
+           {}
+           {}
+
+\screenshot{img/B_install-22}
+           {}
+           {}
+
+\screenshot{img/B_install-23}
+           {}
+           {}
+
+\screenshot{img/B_install-24}
+           {}
+           {}
+
+\screenshot{img/B_install-25}
+           {}
+           {}
+
+\screenshot{img/B_install-26}
+           {}
+           {}
+
+\screenshot{img/B_install-27}
+           {}
+           {}
+
+\screenshot{img/B_install-28}
+           {}
+           {}
+
+\screenshot{img/B_install-29}
+           {}
+           {}
+
+\screenshot{img/B_install-30}
+           {}
+           {}
+
+\screenshot{img/B_install-31}
+           {}
+           {}
+
+
+% ______________________________________________________________________________
+\subsection{Felsökning}
+
+\screenshot{img/C_debug-01}
+           {}
+           {}
+
+\screenshot{img/C_debug-02}
+           {}
+           {}
+
+\screenshot{img/C_debug-03}
+           {}
+           {}
+
+
+% ______________________________________________________________________________
+\subsection{Första start av systemet}
+
+\screenshot{img/D_first-boot-01}
+           {}
+           {}
+
+\screenshot{img/D_first-boot-02}
+           {}
+           {}
+
+\screenshot{img/D_first-boot-03}
+           {}
+           {}
+
+
+% ______________________________________________________________________________
+\subsection{Installation av \texttt{Guest additions}}
+
+\screenshot{img/E_guest-install-01}
+           {}
+           {}
+
+\screenshot{img/E_guest-install-02}
+           {}
+           {}
+
+\screenshot{img/E_guest-install-03}
+           {}
+           {}
+
+\screenshot{img/E_guest-install-04}
+           {}
+           {}
+
+
+% ______________________________________________________________________________
+\subsection{Felsökning av \texttt{Guest additions}}
+
+\screenshot{img/F_guest-debug-01}
+           {}
+           {}
+
+\screenshot{img/F_guest-debug-02}
+           {}
+           {}
+
+\screenshot{img/F_guest-debug-03}
+           {}
+           {}
+
+\screenshot{img/F_guest-debug-04}
+           {}
+           {}
+
+\screenshot{img/F_guest-debug-05}
+           {}
+           {}
+
+\screenshot{img/F_guest-debug-06}
+           {}
+           {}
+
+\screenshot{img/F_guest-debug-07}
+           {}
+           {}
+
+\screenshot{img/F_guest-debug-08}
+           {}
+           {}
+
+\screenshot{img/F_guest-debug-09}
+           {}
+           {}
+
+\screenshot{img/F_guest-debug-10}
+           {}
+           {}
+
+
+% ______________________________________________________________________________
+\subsection{Slutförd installation}
+
+\screenshot{img/G_done-01}
+           {Efter att systemet startat om sker åter igen inloggning med
+            användaren \texttt{jonas}.}
+           {}
+
+\screenshot{img/G_done-02}
+           {Med \texttt{Guest Additions} installerat kan den virtuella maskinen
+            köras i helskärmsläge genom att välja \texttt{Full-screen Mode} i 
+            menyn \texttt{View}.}
+           {}
+
+\screenshot{img/G_done-03}
+           {Bilden visar det slutgiltiga resultatet. Den virtuella maskinen
+            körs i helskärm och fungerar precis som om systemet kördes direkt
+            ``mot metallen'', precis som värdsystemet. 
+            Med \texttt{Guest Additions} installerat justeras fönstret och 
+            skärmupplösningen automatiskt för att passa värdsystemet.}
+           {}
+

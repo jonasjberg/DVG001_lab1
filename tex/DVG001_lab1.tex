@@ -15,13 +15,20 @@
 \usepackage[utf8]{inputenc}
 \inputencoding{utf8}
 \usepackage[swedish]{babel}
+\usepackage[swedish]{isodate}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{fullpage}
 
+\usepackage{siunitx}
 \usepackage{textcomp}
 \usepackage{url}
 \usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{microtype}
 
 \usepackage{minted}
 \usemintedstyle{pastie} 
@@ -31,10 +38,19 @@
 \usepackage{verbatim}
 \usepackage{listings}
 
-\usepackage[backend=biber,
-            style=numeric]{biblatex}
-\addbibresource{tex/referenser.bib}
-%\bibliography{tex/referenser}
+%\usepackage[backend=biber,
+%            style=numeric]{biblatex}
+%\addbibresource{tex/referenser.bib}
+%%\bibliography{tex/referenser}
+
+\newcommand{\screenshot}[3]{
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{#1}
+\caption{#2}
+\label{#3}
+\end{figure}
+}
 
 
 \title{DVG001                                  \\ 
@@ -76,7 +92,6 @@
 % \input{tex/resultat.tex}
 
   %\newpage
-  %\input{tex/referenser.tex}
-  \printbibliography
+  %\printbibliography
 
 \end{document}

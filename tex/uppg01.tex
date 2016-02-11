@@ -68,11 +68,11 @@ installationsprocessen.
            {Skärmdump av värdsystemet som kör \texttt{VirtualBox} där en ny
             virtuell maskin skapas genom att klicka den blå ikonen
             \texttt{New}.}
-           {fig:A_new-01}
+           {fig:01}
 
 Jag väljer att skapa min miljö som en virtuell maskin. Då jag redan använder
 och är bekant med \texttt{VirtualBox} så väljer jag att använda det för att
-skapa min virtuella maskin enligt Figur~\ref{fig:A_new-01}.
+skapa min virtuella maskin enligt Figur~\ref{fig:01}.
 
 \screenshot{img/A_new-02}
            {Ny virtuell maskin}
@@ -97,9 +97,9 @@ skapa min virtuella maskin enligt Figur~\ref{fig:A_new-01}.
 \screenshot{img/A_new-05}
            {Typ av virtuell lagringsmedia}
            {Standardvalet \texttt{VDI} fungerar bra för det här
-            användningsområdet. Ytterigare information de olika alternativen
-            finns i \cite{virtualbox:vdidetails}.}
-            % TODO: FIXA OVANSTÅENDE!
+            användningsområdet. Ytterigare information om de olika alternativen
+            har hämtats från dokumentationen till \texttt{Virtualbox},
+            \cite{virtualbox:vdidetails}.}
            {}
 
 \screenshot{img/A_new-06}
@@ -111,7 +111,7 @@ skapa min virtuella maskin enligt Figur~\ref{fig:A_new-01}.
            {Namnge virtuell lagringsmedia}
            {Namnet och storleken på disken sätts till \texttt{debian} (vilket
             ger ett filnamn \texttt{debian.vdi} i katalogen för den virtuella
-            maskinen) och storleken sätts godtyckligt till \SI{10}{\mega\byte}.}
+            maskinen) och storleken sätts godtyckligt till \SI{10}{\M\byte}.}
            {}
 
 \screenshot{img/A_new-08}
@@ -133,7 +133,7 @@ skapa min virtuella maskin enligt Figur~\ref{fig:A_new-01}.
            {Grafikinställningar}
            {Bland alternativen till höger väljs \texttt{Display}.
             Grafikminnet för gästen ökas till värdsystemets högsta möjliga
-            \SI{128}{\mega\byte}. Stöd för hårdvaruacceleration finns ej med
+            \SI{128}{\M\byte}. Stöd för hårdvaruacceleration finns ej med
             den här kombinationen av grafikkort och version av \texttt{Xorg}.}
            {}
 
@@ -156,17 +156,17 @@ skapa min virtuella maskin enligt Figur~\ref{fig:A_new-01}.
            {}
 
 \screenshot{img/A_new-13}
+           {Inställningar för fildelning}
            {Under \texttt{Shared Folders} väljs en katalog för fildelning mellan den
             virtuella maskinen och värdsystemet. Katalogen är gemensam för alla
             virtualiserade system på värdsystemet. \texttt{Auto-mount} markeras vilket
             aktiverar automatisk montering av katalogen. Det är ett exempel på
             bekvämlighetsfunktioner som följer med \texttt{Guest Additions}.}
            {}
-           {}
 
 \screenshot{img/A_new-14}
+           {Inställningar för fildelning}
            {Här syns den delade mappen \texttt{VirtualBoxShared} som nyss lagts till.}
-           {}
            {}
 
 % ______________________________________________________________________________
@@ -176,173 +176,209 @@ tillfredsställande på värdsystemet och är redo för installation av
 operativsystemet.
 
 \screenshot{img/B_install-01}
+           {Första boot av systemet}
            {Systemet bootas för första gången och följande skärm visas efter att
             bios laddat klart och läst in den bootbara diskavbildningsfilen
             \texttt{debian-live-8.2.0-i386-xfce-desktop}.}
            {}
-           {}
 
 \screenshot{img/B_install-02}
+           {Påbörja installationsprocessen}
            {Installationen startas genom att välja antingen \texttt{Install} eller
             \texttt{Graphical Install}. I det här fallet väljs det senare.}
            {}
-           {}
 
 \screenshot{img/B_install-03}
+           {Val av språk}
            {Språket sätts till engelska. Valet motiveras dels av att
-            översättningen i många fall inte är komplett, men i huvudsak så är
+            översättningen i många fall inte är komplett och att systemet
+            känns mer koherent på engelska, men i huvudsak så är
             det en smaksak.}
-           {}
            {}
 
 \screenshot{img/B_install-04}
+           {Val av geografisk plats}
            {Vid valet för geografisk plats väljs \texttt{other}.}
-           {}
            {}
 
 \screenshot{img/B_install-05}
+           {Vidare val av plats -- \texttt{locale}}
            {Vidare väljs \texttt{Europe}.}
-           {}
            {}
 
 \screenshot{img/B_install-06}
+           {Ytterligare val av plats -- \texttt{locale}}
            {Och slutligen \texttt{Sweden}.}
-           {}
            {}
 
 \screenshot{img/B_install-07}
-           {För locale väljs \texttt{en_US.UTF-8}. Egentligen borde vi välja en
-            svensk locale men det kan ändras sen när systemet är installerat.}
-           {}
+           {Val av \texttt{locale}}
+           {För locale väljs \texttt{en\_US.UTF-8}. Egentligen vore det möjligtvis
+            bättre lämpat att välja en svensk locale men tidigare erfarenheter har
+            cementerat vanan att välja en engelsk locale, och om nödvändigt
+            ändra till en svensk senare, när systemet är installerat.}
            {}
 
 \screenshot{img/B_install-08}
+           {Val av tangentbordslayout}
            {Tangentbordslayouten ställs till svensk. Valet av
             tangentbordslayout är skiljd från det tidigare valet av
-            \texttt{locale}.}
-           {}
+            \texttt{locale}, det är alltså möjligt att använda ett svenskt
+            tangentbord men låta systemet skriva ut valuta, tidszon, etc. efter
+            amerikanska standarder.
+            }
            {}
 
 \screenshot{img/B_install-09}
-           {I det här skedet används den information vid matat in för att
-            påbörja installationen.}
-           {}
+           {Installationsprocessen fortgår}
+           {I det här skedet används den information som matats in för att
+            påbörja installationen. Ingen interaktion krävs på ett tag.}
            {}
 
 \screenshot{img/B_install-10}
-           {Datorns namn på nätverket bestäms av \texttt{hostname} och sätts till
-            ''debian''.}
-           {}
+           {Val av \texttt{hostname}}
+           {Datorns namn på nätverket bestäms av \texttt{hostname} som sätts till
+            ''debian''. Det gör det möjligt att ansluta till datorn via t.ex.
+            \texttt{SSH} senare genom att skriva "\texttt{ssh jonas@debian}".}
            {}
 
 \screenshot{img/B_install-11}
-           {}
-           {}
+           {Konfigurering av nätverk}
+           {Domännamnet lämnas tomt.}
            {}
 
 \screenshot{img/B_install-12}
-           {}
-           {}
-           {}
-
-\screenshot{img/B_install-13}
-           {}
-           {}
+           {Lösenord till användaren \texttt{root}}
+           {Administratörskontot \texttt{root} får ett nytt lösenord.
+            Lösenordet matas in två gånger för att verifiera inmatningen.}
            {}
 
 \screenshot{img/B_install-13}
-           {}
-           {}
+           {Skapandet av en ny användare}
+           {Ett nytt användarkonto skapas och ett riktigt för- och efternamn
+            skrivs in.  Uppgifterna används av olika program, bl.a.
+            \texttt{OpenOffice}.}
            {}
 
 \screenshot{img/B_install-14}
-           {}
-           {}
+           {Val av den nya användarens användarnamn}
+           {Den nya användarens användarnamn väljs enligt god praxis
+            \parencite{forelasning03} upp till 8 små bokstäver/siffror (börjar
+            med \texttt{a-z} och sedan upp till sju "\texttt{0-9a-z_-}".)}
            {}
 
 \screenshot{img/B_install-15}
-           {}
-           {}
+           {Val av den nya användarens lösenord}
+           {Den nya användaren \texttt{jonas} får ett nytt lösenord.}
            {}
 
 \screenshot{img/B_install-16}
-           {}
-           {}
+           {Partiotionering av hårddisken}
+           {I det här skedet börjar partitioneringen av hårddisken, en
+            uppdelning av det fysiska lagringsutrymmet till logiska
+            partitioner. I vanliga fall är det lämpligt att skapa flera
+            partitioner och separera användarnas filer från systemets filer,
+            men i det här fallet väljs den automatiska metoden
+            \texttt{Guided - use entire disk} där hela disken används.}
            {}
 
 \screenshot{img/B_install-17}
-           {}
-           {}
+           {Bekräftelse av partitionering}
+           {En extra dialogruta informerar om att disken kommer att raderas.}
            {}
 
 \screenshot{img/B_install-18}
-           {}
-           {}
+           {Val av partitionsschema}
+           {Disken \texttt{sda} är vald för partitionering och vi väljer här
+            den enkla metoden där hela disken används för en enda stor partition.
+            Det är som sagt ofta lämpligt att välja ett partitionssysten där
+            åtminstone \texttt{/home} är förlagt till en egen partition, men
+            eftersom att detta system är ett isolerat system som bara kommer
+            att användas som arbetsmiljö för kursen duger det enklaste alternativet,
+            \texttt{All files in one partition (recommended for new users)}.
+            }
            {}
 
 \screenshot{img/B_install-19}
-           {}
-           {}
+           {Bekräftelse av partitionering}
+           {Ytterligare en dialogruta visar de valda inställningarna och ger
+            chans att avbryta innan all data rensas och partitioneringen utförs.}
            {}
 
 \screenshot{img/B_install-20}
-           {}
-           {}
+           {Starta partitionering}
+           {Partitionering startar genom att klicka \texttt{Continue}.}
            {}
 
 \screenshot{img/B_install-21}
-           {}
-           {}
+           {Systemet installeras}
+           {Installationen sköter sig själv ett tag, filer laddas hem, installeras
+            och konfigureras med de inställningar som hittils gjorts.}
            {}
 
 \screenshot{img/B_install-22}
-           {}
-           {}
+           {Val av "nätverksspegel"}
+           {Då en stadig uppkoppling finns tillgänglig så används en
+            nätverksspegel (\texttt{network mirror}) för att ladda hem nyare
+            versioner av paket under installationsprocessen.}
            {}
 
 \screenshot{img/B_install-23}
-           {}
-           {}
+           {Val av "nätverksspegelns" server}
+           {Servern väljs efter geografiskt läge för att säkerställa god
+            uppkoppling med snabb överföringshastighet.}
            {}
 
 \screenshot{img/B_install-24}
-           {}
-           {}
+           {Val av \texttt{Debian archive mirror}}
+           {Här väljs en specifik server som kommer att användas för att
+            ladda ned paket.}
            {}
 
 \screenshot{img/B_install-25}
-           {}
-           {}
+           {Val av proxy för nätverksspegel.}
+           {Fältet för proxy lämnas tomt.}
            {}
 
 \screenshot{img/B_install-26}
-           {}
-           {}
+           {Installations-/filöverföringsprocess}
+           {Återigen så dröjer det en stund medan systemet laddar hem,
+            installerar och Konfigurerar paket.}
            {}
 
 \screenshot{img/B_install-27}
-           {}
-           {}
+           {Installation av \texttt{GRUB}}
+           {Intallationen av \texttt{GRUB} startar i det här läget.}
            {}
 
 \screenshot{img/B_install-28}
-           {}
-           {}
+           {Inställningar för \texttt{GRUB}}
+           {Eftersom det bara finns ett operativsystem på den här hårddisken så
+            skrivs \texttt{GRUB}s \texttt{boot loader} direkt till
+            \texttt{master boot record}.
+            Det innebär att då systemet bootar och \texttt{BIOS} laddat klart
+            så letar det på en särskild plats i början av disken efter något
+            att exekvera, där kommer nu \texttt{GRUB} att ta över och fortsätta
+            start av operativsystemet.
            {}
 
 \screenshot{img/B_install-29}
-           {}
-           {}
+           {Val av \texttt{boot loader}}
+           {Här väljs att \texttt{GRUB} \texttt{boot loader} ska installeras
+            på vår enda tillgängliga partition.}
            {}
 
 \screenshot{img/B_install-30}
-           {}
-           {}
+           {Installationen slutförd}
+           {Installationsprocessen är nu klar och vi ombeds mata ut den media
+            vi använt för att boota till för att sedan starta om datorn.}
            {}
 
 \screenshot{img/B_install-31}
-           {}
-           {}
+           {Slutförande och uppstädning}
+           {Efter att installationsprogrammet rensat upp eventuella tillfälliga filer
+            och skrivit de sista ändringarna till hårddisken startar systemet om.
+            \par Här stöter vi dock på ett allvarligt problem.}
            {}
 
 
@@ -350,18 +386,27 @@ operativsystemet.
 \subsection{Felsökning}
 
 \screenshot{img/C_debug-01}
-           {}
-           {}
+           {Kritiskt fel hos \texttt{VirtualBox}}
+           {Vid den första omstarten som sker efter att installationsprogrammet
+            avslutats så kraschar den virtuella maskinen helt och ovanstående
+            felmeddelande visas.}
            {}
 
 \screenshot{img/C_debug-02}
-           {}
-           {}
+           {Detaljerad felbeskrivning}
+           {Under \texttt{Details} visas ytterligare information om felet:
+            \texttt{The guest is trying to switch to the PAE mode which is
+            currently disabled by default in VirtualBox ..}. Det här är ett
+            problem som är relativt enkelt att lösa.
+            }
            {}
 
 \screenshot{img/C_debug-03}
-           {}
-           {}
+           {Korrigera inställningar för \texttt{PAE/NX}}
+           {För att lösa problemet måste den virtuella maskinens inställningar
+            ändras genom att välja \texttt{Settings} och vidare \texttt{System},
+            varvid kryssrutan för \texttt{Enable PAE/NX} aktiveras.
+            Systemet startas sedan om.}
            {}
 
 
@@ -369,18 +414,28 @@ operativsystemet.
 \subsection{Första start av systemet}
 
 \screenshot{img/D_first-boot-01}
-           {}
-           {}
+           {En första lyckad systemstart}
+           {Efter att inställningarna ändrats så visas inte felmeddelandet och
+            systemet startar utan problem. En grafisk inloggningsskärm startar
+            automatiskt.}
            {}
 
 \screenshot{img/D_first-boot-02}
-           {}
-           {}
+           {Den första inloggningen}
+           {Användaren \texttt{jonas}, som skapades under
+            installationsprocessen, används för att logga in.  Lösenordet är
+            det som angavs under installationen.}
            {}
 
 \screenshot{img/D_first-boot-03}
-           {}
-           {}
+           {Start av det grafiska gränssnittet \texttt{xfce}}
+           {Efter att ett korrekt användarnamn och lösenord matats in startas
+            \texttt{xfce4}, som är den grafiska miljö
+            (\texttt{desktop environment}) som är standard i den distribution
+            som använts. Andra versioner av \texttt{Debian} kommer med andra
+            grafiska miljöer. Den övre panelen visar en dialogruta som frågar
+            om standardinställnigarna ska användas. Här väljs att använda
+            standard, \texttt{use default config}.}
            {}
 
 
@@ -388,23 +443,38 @@ operativsystemet.
 \subsection{Installation av \texttt{Guest additions}}
 
 \screenshot{img/E_guest-install-01}
-           {}
-           {}
+           {Påbörja installationen av \Guest additions}}
+           {\texttt{VirtualBox} \texttt{Guest additions} är ett tillägg som
+            aktiverar extra funktionalitet och bekvämlighetsfunktioner. T.ex.
+            enklare fildelning mellan gäst- och värdsystem, samt bättre
+            möjligheter att ställa in skärmupplösning. För att installera
+            \texttt{Guest additions} används menyalternativet
+            \texttt{Insert Guest Additions CD image...} i den övre menyn i
+            \texttt{VirtualBox}. Precis som vid installationen av operativsystemet
+            så används en diskavbildningsfil som emulerar en CD/DVD-skiva.}
            {}
 
 \screenshot{img/E_guest-install-02}
-           {}
-           {}
+           {Automatisk nedladdning av diskavbildningsfilen}
+           {Tidigare behövde man ladda hem \texttt{Guest additions} separat från
+            Oracles hemsida. I senare versioner av \texttt{VirtualBox} finns
+            möjligheten att automatiskt ladda hem de filer som saknas.
+            \par Av bekvämlighetsskäl låter vi programmet sköta nedladdningen
+            automatiskt varpå alternativet \texttt{Download} väljs.}
            {}
 
 \screenshot{img/E_guest-install-03}
-           {}
-           {}
+           {Bekräftelse av nedladdning}
+           {En extra bekräftelse krävs för att nedladdningen ska börja.}
            {}
 
 \screenshot{img/E_guest-install-04}
-           {}
-           {}
+           {Okänt fel}
+           {Efter att nedladdningen till slut nått 100\% uppstår ett fel:
+            \par \texttt{The network operation failed with the following error:
+            \\ During network request: Unknown reason.}.
+            \par Felmeddelandet är inte särskilt hjälpsamt vilket gör det
+            svårare att veta vart och hur det är bäst lämpat att börja felsöka.}
            {}
 
 
@@ -412,13 +482,23 @@ operativsystemet.
 \subsection{Felsökning av \texttt{Guest additions}}
 
 \screenshot{img/F_guest-debug-01}
-           {}
-           {}
+           {Sökning i paketarkiven på värdsystemet}
+           {Eftersom att nedladdningen av \texttt{Guest additions} sker på
+            värdsystmet börjar felsökningen med att söka efter filerna i
+            paketarkiven. Kommandot \texttt{apt-cache search} används för att
+            söka efter ''virtualbox''. Sökresultaten skickas sen till
+            \texttt{grep} som vidare söker efter ordet ''guest''.
+            \par Bland resultaten finns \texttt{virtualbox-guest-additions-iso}
+            vilket troligtvis är den diskavbildningsfil som behövs.}
            {}
 
 \screenshot{img/F_guest-debug-02}
-           {}
-           {}
+           {Manuell installation av \texttt{virtualbox-guest-additions-iso}
+           {\texttt{Guest additions} installeras manuellt med kommandot
+            \texttt{apt-get install}, som tar de paket som ska installeras som
+            argument. I det här fallet \texttt{virtualbox-guest-additions-iso}.
+            Kommandot kräver administratörsrättigheter och körs därför med
+            \texttt{sudo}.
            {}
 
 \screenshot{img/F_guest-debug-03}

@@ -14,9 +14,16 @@
 
 \usepackage[utf8]{inputenc}
 \inputencoding{utf8}
+\usepackage[T1]{fontenc}
 \usepackage[swedish]{babel}
 \usepackage[swedish]{isodate}
-\usepackage[T1]{fontenc}
+
+\usepackage{csquotes}               % Behövs av biblatex
+\usepackage[natbib=true,
+            style=alphabetic,
+            backend=biber]{biblatex}
+\addbibresource{refs.bib}
+
 \usepackage{lmodern}
 \usepackage{fullpage}
 
@@ -31,17 +38,12 @@
 \usepackage{microtype}
 
 \usepackage{minted}
-\usemintedstyle{pastie} 
+\usemintedstyle{pastie}
 \renewcommand\listingscaption{Program source code}
 \renewcommand\listoflistingscaption{List of program sources}
 
 \usepackage{verbatim}
 \usepackage{listings}
-
-%\usepackage[backend=biber,
-%            style=numeric]{biblatex}
-%\addbibresource{tex/referenser.bib}
-%%\bibliography{tex/referenser}
 
 \newcommand{\screenshot}[3]{
 \begin{figure}[H]
@@ -54,8 +56,8 @@
 }
 
 
-\title{\textsc{DVG001}                         \\ 
-       Introduktion till Linux och små nätverk \\ 
+\title{\textsc{DVG001}                         \\
+       Introduktion till Linux och små nätverk \\
        Laboration 1}
 
 \author{                                 \\
@@ -73,13 +75,14 @@
 
   \begin{center}
   \begin{tabular}{l r}
-    Datum:               & Januari 2016   \\
+    Utförd: & \isodate \printdate{2016-01-26} -- \today \\
     Kursansvarig lärare: & Anders Jackson
   \end{tabular}
   \end{center}
 
   \begin{abstract}
-    Laboration i DVG001 - Introduktion till Linux och små nätverk som läses på distans via Högskolan i Gävle under vårterminen 2016.
+    Laboration i kursen \emph{DVG001 -- Introduktion till Linux och små
+    nätverk} som läses på distans via Högskolan i Gävle under vårterminen 2016.
   \end{abstract}
 
   \newpage
@@ -94,7 +97,8 @@
   \input{tex/uppg01.tex}
 % \input{tex/resultat.tex}
 
-  %\newpage
-  %\printbibliography
+  \bigskip
+  \addcontentsline{toc}{section}{Referenser}
+  \printbibliography{}
 
 \end{document}

@@ -156,12 +156,16 @@ skapa min virtuella maskin enligt Figur~\ref{fig:A_new-01}.
            {}
 
 \screenshot{img/A_new-13}
-           {}
+           {Under \texttt{Shared Folders} väljs en katalog för fildelning mellan den
+            virtuella maskinen och värdsystemet. Katalogen är gemensam för alla
+            virtualiserade system på värdsystemet. \texttt{Auto-mount} markeras vilket
+            aktiverar automatisk montering av katalogen. Det är ett exempel på
+            bekvämlighetsfunktioner som följer med \texttt{Guest Additions}.}
            {}
            {}
 
 \screenshot{img/A_new-14}
-           {}
+           {Här syns den delade mappen \texttt{VirtualBoxShared} som nyss lagts till.}
            {}
            {}
 
@@ -172,52 +176,62 @@ tillfredsställande på värdsystemet och är redo för installation av
 operativsystemet.
 
 \screenshot{img/B_install-01}
-           {}
+           {Systemet bootas för första gången och följande skärm visas efter att
+            bios laddat klart och läst in den bootbara diskavbildningsfilen
+            \texttt{debian-live-8.2.0-i386-xfce-desktop}.}
            {}
            {}
 
 \screenshot{img/B_install-02}
-           {}
+           {Installationen startas genom att välja antingen \texttt{Install} eller
+            \texttt{Graphical Install}. I det här fallet väljs det senare.}
            {}
            {}
 
 \screenshot{img/B_install-03}
-           {}
+           {Språket sätts till engelska. Valet motiveras dels av att
+            översättningen i många fall inte är komplett, men i huvudsak så är
+            det en smaksak.}
            {}
            {}
 
 \screenshot{img/B_install-04}
-           {}
+           {Vid valet för geografisk plats väljs \texttt{other}.}
            {}
            {}
 
 \screenshot{img/B_install-05}
-           {}
+           {Vidare väljs \texttt{Europe}.}
            {}
            {}
 
 \screenshot{img/B_install-06}
-           {}
+           {Och slutligen \texttt{Sweden}.}
            {}
            {}
 
 \screenshot{img/B_install-07}
-           {}
+           {För locale väljs \texttt{en_US.UTF-8}. Egentligen borde vi välja en
+            svensk locale men det kan ändras sen när systemet är installerat.}
            {}
            {}
 
 \screenshot{img/B_install-08}
-           {}
+           {Tangentbordslayouten ställs till svensk. Valet av
+            tangentbordslayout är skiljd från det tidigare valet av
+            \texttt{locale}.}
            {}
            {}
 
 \screenshot{img/B_install-09}
-           {}
+           {I det här skedet används den information vid matat in för att
+            påbörja installationen.}
            {}
            {}
 
 \screenshot{img/B_install-10}
-           {}
+           {Datorns namn på nätverket bestäms av \texttt{hostname} och sätts till
+            ''debian''.}
            {}
            {}
 
@@ -460,7 +474,7 @@ operativsystemet.
 \screenshot{img/G_done-02}
            {}
            {Med \texttt{Guest Additions} installerat kan den virtuella maskinen
-            köras i helskärmsläge genom att välja \texttt{Full-screen Mode} i 
+            köras i helskärmsläge genom att välja \texttt{Full-screen Mode} i
             menyn \texttt{View}.}
            {}
 
@@ -468,8 +482,8 @@ operativsystemet.
            {Slutresultat}
            {Bilden visar det slutgiltiga resultatet. Den virtuella maskinen
             körs i helskärm och fungerar precis som om systemet kördes direkt
-            ``mot metallen'', precis som värdsystemet. 
-            Med \texttt{Guest Additions} installerat justeras fönstret och 
+            ``mot metallen'', precis som värdsystemet.
+            Med \texttt{Guest Additions} installerat justeras fönstret och
             skärmupplösningen automatiskt för att passa värdsystemet.}
            {}
 

@@ -52,7 +52,7 @@ under laborationen:
 
 
 % ______________________________________________________________________________
-\subsection{Skapande av en virtuell maskin}
+\subsection{Att skapa en virtuell maskin}
 Det första steget var att ladda hem en bootbar \texttt{.iso}-fil av
 distributionen Debian. Det finns många olika varianter att välja bland och då
 jag sedan tidigare är van vid att använda \texttt{xfce} så valde jag att ladda
@@ -239,7 +239,7 @@ operativsystemet.
            {Val av \texttt{hostname}}
            {Datorns namn på nätverket bestäms av \texttt{hostname} som sätts till
             ''debian''. Det gör det möjligt att ansluta till datorn via t.ex.
-            \texttt{SSH} senare genom att skriva "\texttt{ssh jonas@debian}".}
+            \texttt{SSH} senare genom att skriva ''\texttt{ssh jonas@debian}''.}
            {}
 
 \screenshot{img/B_install-11}
@@ -264,7 +264,7 @@ operativsystemet.
            {Val av den nya användarens användarnamn}
            {Den nya användarens användarnamn väljs enligt god praxis
             \parencite{forelasning03} upp till 8 små bokstäver/siffror (börjar
-            med \texttt{a-z} och sedan upp till sju "\texttt{0-9a-z_-}".)}
+            med \texttt{a-z} och sedan upp till sju ''\texttt{0-9a-z_-}''.)}
            {}
 
 \screenshot{img/B_install-15}
@@ -306,7 +306,7 @@ operativsystemet.
            {}
 
 \screenshot{img/B_install-20}
-           {Starta partitionering}
+           {Start av partitionering}
            {Partitionering startar genom att klicka \texttt{Continue}.}
            {}
 
@@ -317,14 +317,14 @@ operativsystemet.
            {}
 
 \screenshot{img/B_install-22}
-           {Val av "nätverksspegel"}
+           {Val av ''nätverksspegel''}
            {Då en stadig uppkoppling finns tillgänglig så används en
             nätverksspegel (\texttt{network mirror}) för att ladda hem nyare
             versioner av paket under installationsprocessen.}
            {}
 
 \screenshot{img/B_install-23}
-           {Val av "nätverksspegelns" server}
+           {Val av ''nätverksspegelns'' server}
            {Servern väljs efter geografiskt läge för att säkerställa god
             uppkoppling med snabb överföringshastighet.}
            {}
@@ -395,8 +395,9 @@ operativsystemet.
 \screenshot{img/C_debug-02}
            {Detaljerad felbeskrivning}
            {Under \texttt{Details} visas ytterligare information om felet:
-            \texttt{The guest is trying to switch to the PAE mode which is
-            currently disabled by default in VirtualBox ..}. Det här är ett
+             \begin{Verbatim}The guest is trying to switch to the PAE mode which is
+            currently disabled by default in VirtualBox ..
+            \end{Verbatim}. Det här är ett
             problem som är relativt enkelt att lösa.
             }
            {}
@@ -502,43 +503,72 @@ operativsystemet.
            {}
 
 \screenshot{img/F_guest-debug-03}
-           {}
-           {}
+           {Lokalisering av diskavbildningsfilen}
+           {Efter att installationen slutförts listas innehållet i det
+            installerade paketet genom att skriva kommandot \texttt{dpkg -L
+            <paketnamn>}.  Alla filer listas med fullständig sökväg. Filen som
+            ska monteras i \texttt{VirtualBox} har den fullständig sökvägen
+            \texttt{/usr/share/virtualbox/VBoxGuestAdditions.iso}.}
            {}
 
 \screenshot{img/F_guest-debug-04}
-           {}
-           {}
+           {Montering av diskavbildningsfilen}
+           {Diskavbildningsfilen monteras nu som tidigare genom menyn
+            \texttt{Devices} och sedan \texttt{Optical Drives}, sedan väljs
+            filen som lokaliserades i föregående steg.}
            {}
 
 \screenshot{img/F_guest-debug-05}
-           {}
-           {}
+           {Montering av virtuell media}
+           {Diskavbildningsfilen dyker nu upp som en transparent ikon på
+            skrivbordet i gästsystemet. För att komma åt filerna väljs
+            \texttt{Mount Volume} i menyn som dyker upp efter att ikonen
+            högerklickats.}
            {}
 
 \screenshot{img/F_guest-debug-06}
-           {}
-           {}
+           {Visa media i filhanteraren}
+           {Ikonen som tidigare var transparent är nu helt ifylld, vilket
+            innebär att den är monterad och tillgänglig. Genom att högerklicka
+            och välja \texttt{Open} så öppnas platsen där diskavbildningsfilen
+            monterats i filhanteringsprogrammet \texttt{Thunar}, som är 
+            standard i \texttt{xfce}.}
            {}
 
 \screenshot{img/F_guest-debug-07}
-           {}
-           {}
+           {Media öppen i \texttt{Thunar}}
+           {Här visas diskavbildningsfilen i kolumnen till vänster under
+            \texttt{DEVICES} som \texttt{VBOXADDITI...}. I adressfältet visas
+            den fullständiga sökvägen där diskavbildningsfilen monterats:
+            \texttt{/media/cdrom0/}. Ett terminalfönster öppnas genom att
+            högerklicka i fönstret och välja \texttt{Open Terminal Here} i
+            menyn som dyker upp.}
            {}
 
 \screenshot{img/F_guest-debug-08}
-           {}
-           {}
+           {Listning av alla filer i diskavbildningsfilen}
+           {I terminalfönstret körs kommandot \texttt{ls -ahl} för att visa
+            alla filer i katalogen.}
            {}
 
 \screenshot{img/F_guest-debug-09}
-           {}
-           {}
+           {Installation av \texttt{Guest Additions}}
+           {För att installera \texttt{Guest Additions} krävs
+            administratörrättigheter. För att logga in som en annan användare
+            används kommandot \texttt{su}. Om det körs utan extra argument 
+            byter man till användaren \texttt{root}, förutsatt att lösenordet
+            till kontot \texttt{root} matas in. Efter att ha bytt till
+            administratörskontot startas installtationen genom att skriva
+            kommandot \texttt{sh VBoxLinuxAdditions.run}, som skapar ett nytt
+            skal som exekverar installationsfilen.}
            {}
 
 \screenshot{img/F_guest-debug-10}
-           {}
-           {}
+           {Slutförd installation av \texttt{Guest Additions}}
+           {Efter en stund har installationen av \texttt{Guest Additions}
+            slutförts och vi ombeds starta om fönsterhanteraren/systemet.
+            Den virtuella maskinen startas om genom att välja restart i 
+            den övre menyraden.}
            {}
 
 
@@ -559,10 +589,10 @@ operativsystemet.
            {}
 
 \screenshot{img/G_done-03}
-           {Slutresultat}
+           {Slutresultatet}
            {Bilden visar det slutgiltiga resultatet. Den virtuella maskinen
-            körs i helskärm och fungerar precis som om systemet kördes direkt
-            ``mot metallen'', precis som värdsystemet.
+            körs i helskärm och fungerar precis som om systemet kördes
+            ''direkt mot metallen'', som värdsystemet.
             Med \texttt{Guest Additions} installerat justeras fönstret och
             skärmupplösningen automatiskt för att passa värdsystemet.}
            {}

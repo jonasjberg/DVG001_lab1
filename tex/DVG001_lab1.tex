@@ -22,7 +22,7 @@
 \usepackage[natbib=true,
             style=numeric,
             backend=biber]{biblatex}
-\addbibresource{refs.bib}
+\addbibresource{tex/refs}
 
 \usepackage{lmodern}
 \usepackage{fullpage}
@@ -37,13 +37,17 @@
 \usepackage{graphicx}
 \usepackage{microtype}
 
-\usepackage{minted}
-\usemintedstyle{pastie}
-\renewcommand\listingscaption{Program source code}
-\renewcommand\listoflistingscaption{List of program sources}
-
 \usepackage{verbatim}
 \usepackage{listings}
+
+\usepackage[pdfusetitle,
+            bookmarks=true,
+            bookmarksnumbered=true,
+            bookmarksopen=false,
+            breaklinks=false,
+            pdfborder={0 0 0},
+            backref=false,
+            colorlinks=false]{hyperref}
 
 \newcommand{\screenshot}[4]{
 \begin{figure}[H]
@@ -83,6 +87,8 @@
   \begin{abstract}
     Laboration i kursen \emph{DVG001 -- Introduktion till Linux och små
     nätverk} som läses på distans via Högskolan i Gävle under vårterminen 2016.
+    Laborationen behandlar skapandet av en arbetsmiljö som kommer att användas
+    under kursens gång.
   \end{abstract}
 
   \newpage

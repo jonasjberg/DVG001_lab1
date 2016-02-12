@@ -111,7 +111,7 @@ skapa min virtuella maskin enligt Figur~\ref{fig:01}.
            {Namnge virtuell lagringsmedia}
            {Namnet och storleken på disken sätts till \texttt{debian} (vilket
             ger ett filnamn \texttt{debian.vdi} i katalogen för den virtuella
-            maskinen) och storleken sätts godtyckligt till \SI{10}{\M\byte}.}
+            maskinen) och storleken sätts godtyckligt till $\SI{10}{\mega\byte}$.}
            {}
 
 \screenshot{img/A_new-08}
@@ -133,7 +133,7 @@ skapa min virtuella maskin enligt Figur~\ref{fig:01}.
            {Grafikinställningar}
            {Bland alternativen till höger väljs \texttt{Display}.
             Grafikminnet för gästen ökas till värdsystemets högsta möjliga
-            \SI{128}{\M\byte}. Stöd för hårdvaruacceleration finns ej med
+            $\SI{128}{\mega\byte}$. Stöd för hårdvaruacceleration finns ej med
             den här kombinationen av grafikkort och version av \texttt{Xorg}.}
            {}
 
@@ -263,8 +263,8 @@ operativsystemet.
 \screenshot{img/B_install-14}
            {Val av den nya användarens användarnamn}
            {Den nya användarens användarnamn väljs enligt god praxis
-            \parencite{forelasning03} upp till 8 små bokstäver/siffror (börjar
-            med \texttt{a-z} och sedan upp till sju ''\texttt{0-9a-z_-}''.)}
+            \cite{forelasning03} upp till 8 små bokstäver/siffror (börjar
+            med \texttt{a-z} och sedan upp till sju ''\texttt{0-9a-z\_-}''.)}
            {}
 
 \screenshot{img/B_install-15}
@@ -317,14 +317,14 @@ operativsystemet.
            {}
 
 \screenshot{img/B_install-22}
-           {Val av ''nätverksspegel''}
+           {Val av nätverksspegel}
            {Då en stadig uppkoppling finns tillgänglig så används en
-            nätverksspegel (\texttt{network mirror}) för att ladda hem nyare
-            versioner av paket under installationsprocessen.}
+           nätverksspegel (engelska \texttt{network mirror}) för att ladda hem
+           nyare versioner av paket under installationsprocessen.}
            {}
 
 \screenshot{img/B_install-23}
-           {Val av ''nätverksspegelns'' server}
+           {Val av nätverksspegelns server}
            {Servern väljs efter geografiskt läge för att säkerställa god
             uppkoppling med snabb överföringshastighet.}
            {}
@@ -354,12 +354,12 @@ operativsystemet.
 \screenshot{img/B_install-28}
            {Inställningar för \texttt{GRUB}}
            {Eftersom det bara finns ett operativsystem på den här hårddisken så
-            skrivs \texttt{GRUB}s \texttt{boot loader} direkt till
+            skrivs \texttt{GRUB} \texttt{boot loader} direkt till
             \texttt{master boot record}.
             Det innebär att då systemet bootar och \texttt{BIOS} laddat klart
             så letar det på en särskild plats i början av disken efter något
             att exekvera, där kommer nu \texttt{GRUB} att ta över och fortsätta
-            start av operativsystemet.
+            start av operativsystemet.}
            {}
 
 \screenshot{img/B_install-29}
@@ -395,19 +395,17 @@ operativsystemet.
 \screenshot{img/C_debug-02}
            {Detaljerad felbeskrivning}
            {Under \texttt{Details} visas ytterligare information om felet:
-             \begin{Verbatim}The guest is trying to switch to the PAE mode which is
-            currently disabled by default in VirtualBox ..
-            \end{Verbatim}. Det här är ett
-            problem som är relativt enkelt att lösa.
-            }
+             \texttt{The guest is trying to switch to the PAE mode which is
+            currently disabled by default in VirtualBox ..}
+            Det här är ett problem som är relativt enkelt att lösa.}
            {}
 
 \screenshot{img/C_debug-03}
            {Korrigera inställningar för \texttt{PAE/NX}}
            {För att lösa problemet måste den virtuella maskinens inställningar
-            ändras genom att välja \texttt{Settings} och vidare \texttt{System},
-            varvid kryssrutan för \texttt{Enable PAE/NX} aktiveras.
-            Systemet startas sedan om.}
+            ändras. Det görs genom att välja \texttt{Settings} och vidare
+            \texttt{System}, varvid kryssrutan för \texttt{Enable PAE/NX}
+            aktiveras.  Systemet startas sedan om.}
            {}
 
 
@@ -444,7 +442,7 @@ operativsystemet.
 \subsection{Installation av \texttt{Guest additions}}
 
 \screenshot{img/E_guest-install-01}
-           {Påbörja installationen av \Guest additions}}
+           {Börja installationen av \texttt{Guest additions}}
            {\texttt{VirtualBox} \texttt{Guest additions} är ett tillägg som
             aktiverar extra funktionalitet och bekvämlighetsfunktioner. T.ex.
             enklare fildelning mellan gäst- och värdsystem, samt bättre
@@ -494,12 +492,12 @@ operativsystemet.
            {}
 
 \screenshot{img/F_guest-debug-02}
-           {Manuell installation av \texttt{virtualbox-guest-additions-iso}
+           {Manuell installation av \texttt{virtualbox-guest-additions-iso}}
            {\texttt{Guest additions} installeras manuellt med kommandot
             \texttt{apt-get install}, som tar de paket som ska installeras som
             argument. I det här fallet \texttt{virtualbox-guest-additions-iso}.
             Kommandot kräver administratörsrättigheter och körs därför med
-            \texttt{sudo}.
+            \texttt{sudo}.}
            {}
 
 \screenshot{img/F_guest-debug-03}
@@ -576,13 +574,13 @@ operativsystemet.
 \subsection{Slutförd installation}
 
 \screenshot{img/G_done-01}
-           {}
+           {Omstart efter slutförd installation}
            {Efter att systemet startat om sker åter igen inloggning med
             användaren \texttt{jonas}.}
            {}
 
 \screenshot{img/G_done-02}
-           {}
+           {Aktivering av helskärmsläge}
            {Med \texttt{Guest Additions} installerat kan den virtuella maskinen
             köras i helskärmsläge genom att välja \texttt{Full-screen Mode} i
             menyn \texttt{View}.}

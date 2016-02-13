@@ -20,9 +20,13 @@
 
 \usepackage{csquotes}               % Behövs av biblatex
 \usepackage[natbib=true,
-            style=numeric,
+            %style=numeric,
+            style=IEEEtran,
             backend=biber]{biblatex}
 \addbibresource{tex/refs.bib}
+
+%\bibliographystyle{IEEEtran}
+%\bibliography{IEEEabrv,mybibfile}
 
 \usepackage{lmodern}
 \usepackage{fullpage}
@@ -104,7 +108,7 @@
   \input{tex/uppg01.tex}
 % \input{tex/resultat.tex}
 
-  \bigskip
+  \newpage
   \addcontentsline{toc}{section}{Referenser}
   \printbibliography{}
 

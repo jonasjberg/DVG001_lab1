@@ -99,7 +99,7 @@ skapa min virtuella maskin enligt Figur~\ref{fig:01}.
            {Standardvalet \texttt{VDI} fungerar bra för det här
             användningsområdet. Ytterigare information om de olika alternativen
             har hämtats från dokumentationen till \texttt{Virtualbox},
-            \cite{virtualbox:vdidetails}.}
+            se \cite{virtualbox:vdidetails}.}
            {}
 
 \screenshot{img/A_new-06}
@@ -225,8 +225,7 @@ operativsystemet.
             tangentbordslayout är skiljd från det tidigare valet av
             \texttt{locale}, det är alltså möjligt att använda ett svenskt
             tangentbord men låta systemet skriva ut valuta, tidszon, etc. efter
-            amerikanska standarder.
-            }
+            amerikanska standarder.}
            {}
 
 \screenshot{img/B_install-09}
@@ -384,6 +383,9 @@ operativsystemet.
 
 % ______________________________________________________________________________
 \subsection{Felsökning}
+Direkt efter den första omstarten så uppstod ett allvarligt fel. Den virtuella
+maskinen havererade totalt och stängdes ned. Lyckligtvis så var det inte alltför
+svårt att lösa problemet och komma vidare.
 
 \screenshot{img/C_debug-01}
            {Kritiskt fel hos \texttt{VirtualBox}}
@@ -503,9 +505,10 @@ operativsystemet.
 \screenshot{img/F_guest-debug-03}
            {Lokalisering av diskavbildningsfilen}
            {Efter att installationen slutförts listas innehållet i det
-            installerade paketet genom att skriva kommandot \texttt{dpkg -L
-            <paketnamn>}.  Alla filer listas med fullständig sökväg. Filen som
-            ska monteras i \texttt{VirtualBox} har den fullständig sökvägen
+            installerade paketet genom att skriva kommandot 
+            \texttt{dpkg -L <paketnamn>}.  Alla filer listas med fullständig
+            sökväg. Filen som ska monteras i \texttt{VirtualBox} har den
+            fullständig sökvägen
             \texttt{/usr/share/virtualbox/VBoxGuestAdditions.iso}.}
            {}
 

@@ -11,6 +11,7 @@
 % See LICENSE.md for full licensing information.
 % ==============================================================================
 
+
 \section{Inledning}\label{inledning}
 % Skriv en kort inledning här som beskriver kortfattat vad rapporten handlar
 % om. Den skall vara orienterande om Bakgrund och Syfte.
@@ -20,7 +21,7 @@ under kursen. Det operativsystem som valts är \texttt{Debian} som är en
 distribution av \texttt{Linux}.
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% ______________________________________________________________________________
 \subsection{Bakgrund}
 % Beskriv lite mer ingående om bakgrunden till uppgiften, vad den handlar om.
 Den första laborationen i kursen ''DVG001 --- Introduktion till Linux och små
@@ -31,7 +32,7 @@ körs då parallelt och under ett värdsystem. Rapporten beskriver hur
 operativsystemet installeras i den virtuella maskinen.
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% ______________________________________________________________________________
 \subsection{Syfte}
 % Skriv lite mer ingående om syftet med uppgiften.
 Syftet med laborationen är att konstruera en arbetsmijö som kan användas under
@@ -41,10 +42,39 @@ Många gånger ger oförutsedda fel möjligheter till fördjupning och
 efterforskning. Det är lämpligt att kursen börjar med denna övning.
 
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% ______________________________________________________________________________
 \subsection{Nomenklatur}
 I texten används \emph{värdsystem} (från engelskans \emph{hostname}) för att
 referera till den fysiska dator som kör programmet \texttt{VirtualBox}.
 Värdsystemet har direkt kontroll till all fysisk hårdvara.
 \par Den virtuella maskinen som körs i \texttt{VirtualBox} kommer i texten att
 kallas \emph{gästsystem} (efter engelskans \emph{guest}).
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section{Planering}
+% TODO: Kort och orienterande om hur ni tänkte genomföra uppgiften.
+%       Orienterande om Planering och Genomförande.
+
+
+% ______________________________________________________________________________
+\subsection{Arbetsmetod}
+% Hur kommer ni att arbeta?  Detta är en lite längre text än den rent
+% orienterande texten i Planering och genomförande ovan.
+
+Nedan följer en preliminär redogörelse för den experimentuppställning som används
+under laborationen:
+
+\begin{itemize}
+  \item Laborationen utförs på en \texttt{ProBook-6545b} laptop som kör
+        \texttt{Xubuntu 15.10} på \texttt{Linux 3.19.0-28-generic}.
+
+  \item Rapporten skrivs i \LaTeX\ med texteditorn \texttt{Vim} och kompileras
+        till pdf med \texttt{latexmk}.
+
+  \item För revisionskontroll används \texttt{Git}.
+
+  \item Virtualisering sker med \texttt{Oracle VirtualBox} version
+        \texttt{5.0.10\_Ubuntu r104061}.
+
+\end{itemize}

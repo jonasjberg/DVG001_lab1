@@ -10,33 +10,6 @@
 % See LICENSE.md for full licensing information.
 % ==============================================================================
 
-\section{Planering}
-% TODO: Kort och orienterande om hur ni tänkte genomföra uppgiften.
-%       Orienterande om Planering och Genomförande.
-
-
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\subsection{Arbetsmetod}
-% Hur kommer ni att arbeta?  Detta är en lite längre text än den rent
-% orienterande texten i Planering och genomförande ovan.
-
-Nedan följer en preliminär redogörelse för den experimentuppställning som används
-under laborationen:
-
-\begin{itemize}
-  \item Laborationen utförs på en \texttt{ProBook-6545b} laptop som kör
-        \texttt{Xubuntu 15.10} på \texttt{Linux 3.19.0-28-generic}.
-
-  \item Rapporten skrivs i \LaTeX\ med texteditorn \texttt{Vim} och kompileras
-        till pdf med \texttt{latexmk}.
-
-  \item För revisionskontroll används \texttt{Git}.
-
-  \item Virtualisering sker med \texttt{Oracle VirtualBox} version
-        \texttt{5.0.10\_Ubuntu r104061}.
-
-\end{itemize}
-
 
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 \section{Genomförande}
@@ -384,8 +357,18 @@ operativsystemet.
 % ______________________________________________________________________________
 \subsection{Felsökning}
 Direkt efter den första omstarten så uppstod ett allvarligt fel. Den virtuella
-maskinen havererade totalt och stängdes ned. Lyckligtvis så var det inte alltför
-svårt att lösa problemet och komma vidare.
+maskinen havererade totalt och stängdes ned med felmeddelandet:
+
+\texttt{The guest is trying to switch to the PAE mode which is currently
+        disabled by default in VirtualBox ..}
+
+Värdsystemet kör ett 32-bitars operativsystem och använder \texttt{PAE} för att
+addressera en större del av det RAM-minne som finns tillgängligt.  De flesta
+Linux-distributioner kräver numer stöd för \texttt{PAE}, se \cite{wiki:pae} och
+\cite{virtualbox:paenx}.  Det här är ett problem som jag känner till sedan
+tidigare och det var ganska uppenbart vad som behövde åtgärdas. 
+Figur~\ref{fig:fixpaenx} visar inställningarna som behövde göras för att 
+korrigera konfigurationen och lösa problemet.
 
 \screenshot{img/C_debug-01}
            {Kritiskt fel hos \texttt{VirtualBox}}
@@ -398,8 +381,7 @@ svårt att lösa problemet och komma vidare.
            {Detaljerad felbeskrivning}
            {Under \texttt{Details} visas ytterligare information om felet:
              \texttt{The guest is trying to switch to the PAE mode which is
-            currently disabled by default in VirtualBox ..}
-            Det här är ett problem som är relativt enkelt att lösa.}
+            currently disabled by default in VirtualBox ..}}
            {}
 
 \screenshot{img/C_debug-03}
@@ -408,11 +390,16 @@ svårt att lösa problemet och komma vidare.
             ändras. Det görs genom att välja \texttt{Settings} och vidare
             \texttt{System}, varvid kryssrutan för \texttt{Enable PAE/NX}
             aktiveras.  Systemet startas sedan om.}
-           {}
+           {fig:fixpaenx}
 
 
 % ______________________________________________________________________________
 \subsection{Första start av systemet}
+Efter att inställningarna för \texttt{PAE} ändrats så startar systemet utan
+problem. Den här versionen av Debian kommer med ''skrivbordsmiljön''
+\texttt{xfce} som standard. Vid systemstart visas en grafisk inloggningsskärm
+som är del av fönster
+
 
 \screenshot{img/D_first-boot-01}
            {En första lyckad systemstart}

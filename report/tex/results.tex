@@ -10,13 +10,45 @@
 % See LICENSE.md for full licensing information.
 % ==============================================================================
 
+
 \section{Resultat}
-% TODO: Vad är det konkreta resultatet av uppgiften?
+% Vad är det konkreta resultatet av uppgiften?
+Det konkreta resultatet av uppgiften är att vi har skapat en arbetsmiljö för
+användning under kursens gång. Arbetsmiljön är i form av en nyskapad virtuell
+maskin installation av Debian 8.  Arbetsmiljön ger ett säkert sätt kan
+experimentera och utföra kommande laborationer i en omgivning som är isolerad
+från omgivningen på ett sätt som ger säkerhet och möjlighet att jobba med en
+''ren'' installation, Dessutom ger möjligheter för att spara läget en virtuell
+maskin befinner sig i genom \texttt{Snapshots} i \texttt{VirtualBox} en extra
+säkerhet. Om ett fel skulle uppstå finns alltid möjligheten att återställa
+systemet till ett känt fungerande läge, vilket sparar enormt mycket tid.
+
 
 \section{Diskussion}
-% TODO: Diskutera lite friare om vad resultatet betyder samt vad ni mer lärt
-%       er.  Även om hur ni kanske skulle gjort annorlunda om ni gjort om det.
+% Diskutera lite friare om vad resultatet betyder samt vad ni mer lärt er.
+% Även om hur ni kanske skulle gjort annorlunda om ni gjort om det.
+En helt virtualiserad miljö ger bättre säkerhet och feltolerans då den är
+isolerad från värdsystemet. Det finns således ingen risk att känsliga data
+raderas av misstag eller att ett allvarligt systemfel äventyrar funktionalitet
+i det övriga systemet. Med riktiga inställningar för fildelning genom nätverk
+kan det isolerade systemet hållas isolerat till den grad att även ett totalt
+systemhaveri inte ''läcker ut'' till värdsystemet. T.ex. vid test av
+''malware'' så är detta är en mycket viktig aspekt ur säkerhetssynpunkt.
+\par En stor del av arbete med mjukvarusystem består av att läsa dokumentation
+och på egen hand lösa problem efter att de dyker upp. När ett oförutsett fel
+uppstår tenderar jag allt oftare att som första steg läsa loggfiler och själv
+försöka felsöka snarare än att använda Google som första utväg. För att uppnå
+en verkligt hög nivå av förståelse (''grokka'') något ämne så tror jag att
+det är mycket viktigt att ha en känsla för äventyr och experimentation, att
+själv försöka lösa problem och möta behov som uppstår.
+
 
 \section{Slutsatser}
-% TODO: Sammanfatta vad ni fått för resultat, utgå från syftet som ni angett i
-%       Syfte ovan.
+% Sammanfatta vad ni fått för resultat, utgå från syftet som ni angett i
+% Syfte ovan.
+Vi har uppnått det mål vi satte upp, dvs att konstruera en arbetsmijö som kan
+användas under resten av kursen. Under installationsprocessen uppstod några
+problem som vi tvingades lösa och problemlösning kan anses vara ett bra sätt
+att få god insyn och djupare förståelse för hur olika system fungerar ''under
+huven''. Avslutningsvis kan sägas att laborationer av den här typen uppskattas
+då de är intressanta och många gånger lärorika.

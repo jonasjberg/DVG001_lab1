@@ -19,14 +19,13 @@
 \usepackage[swedish]{isodate}
 
 \usepackage{csquotes}               % Behövs av biblatex
+%\usepackage[natbib=true,
+%            style=numeric,
+%            backend=biber]{biblatex}
 \usepackage[natbib=true,
-            %style=numeric,
-            style=IEEEtran,
+            style=ieee,
             backend=biber]{biblatex}
 \addbibresource{tex/refs.bib}
-
-%\bibliographystyle{IEEEtran}
-%\bibliography{IEEEabrv,mybibfile}
 
 \usepackage{lmodern}
 \usepackage{fullpage}
@@ -106,9 +105,10 @@
 
   \input{tex/intro.tex}
   \input{tex/uppg01.tex}
-% \input{tex/resultat.tex}
 
   \newpage
+  \input{tex/results.tex}
+
   \addcontentsline{toc}{section}{Referenser}
   \printbibliography{}
 

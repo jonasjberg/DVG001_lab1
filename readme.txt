@@ -1,7 +1,9 @@
 Introduktion till Linux och små nätverk 7,5 hp, distans, VT16
+================================================================================
 
 
 Inlämningsuppgift ett
+---------------------
 
 Bifogade filer: Fil TypografiskMall-OpenOffice.ott (41,308 KB)
                 Fil Laboration1.pdf (75,902 KB)
@@ -21,7 +23,8 @@ in) så att det framgår att det är era bilder. Så ja, det kommer att bli en d
 rapportskrivande i kursen, och vi kommer att vara formella.  Detta för att
 underlätta ert skrivande och vårt rättande.
 
-Laborationen som skall lämnas in till söndagen den 14/2 kl 23:59. 
+
+**Laborationen som skall lämnas in till söndagen den 14/2 kl 23:59.**
 
 (För att lämna in rapporten, tryck på uppgiftens titel ovan och ladda sedan upp
 dokumentet och skriv en kort kommentar om det behövs i formuläret längst ned på

@@ -2,8 +2,6 @@
 
 #  Inlämningsuppgift #1
 
---------------------------------------------------------------------------------
-
 Jonas Sjöberg  
 Högskolan i Gävle  
 `tel12jsg@student.hig.se`  
@@ -11,6 +9,7 @@ Högskolan i Gävle
 
 
 Utförd: 2016-01-26 - 2016-02-14
+
 
 
 ### License
